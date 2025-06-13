@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation</title>
+    <link rel="stylesheet" href="Style.css">
+    <style> font-family: Arial, sans-serif; text-align: center; }
+        .hotel { display: inline-block; width: 250px; margin: 20px; }
+        .hotel img { width: 100%; height: auto; border-radius: 8px; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            /* Ajout de l'image d'arrière-plan */
+            background-image: url('image2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 100vh;
+			font-family: Arial, sans-serif; text-align: center; 
+            .hotel { display: inline-block; width: 250px; margin: 20px; }
+            .hotel img { width: 100%; height: auto; border-radius: 8px;}
+        }
+        /* Overlay sombre pour la lisibilité */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 24, 66, 0.55);
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: #0a1647d0;
+            color: orange;
+            padding: 0.8em 2em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px #0001;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            color: #ffed4a;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5em;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05em;
+            transition: color 0.2s;
+        }
+        .navbar a:hover {
+            color: #ffed4a;
+        }
+        /* ===== FORMULAIRE ===== */
+        .container {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .wrapper {
+            background: #fffefaee;
+            padding: 2.5em 2em 2em 2em;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px #0002;
+            min-width: 340px;
+            max-width: 400px;
+            margin-top: 2em;
+        }
+        .wrapper h2 {
+            margin-bottom: 1.2em;
+            color: #0a1647;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        form .input_box {
+            margin-bottom: 1.15em;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="tel"],
+        form input[type="date"],
+        form input[type="time"],
+        form select {
+            width: 100%;
+            padding: 0.7em;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 1em;
+            outline: none;
+            background: #f7fafd;
+            transition: border 0.2s;
+        }
+        form input:focus, form select:focus {
+            border: 1.5px solid #0a1647;
+        }
+        form label {
+            font-size: 0.97em;
+            color: #202942;
+        }
+        .input_box input[type="checkbox"] {
+            margin-right: 0.5em;
+            margin-left: 1em;
+        }
+        .input_box input[type="checkbox"]:first-of-type {
+            margin-left: 0;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #0a1647 60%, #ffed4a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8em 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #ffed4a 30%, #0a1647 100%);
+            color: #0a1647;
+        }
+        /* ===== CONFIRMATION MODAL ===== */
+        #confirmation {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #confirmation .message {
+            background: #fff;
+            padding: 2.3em 2em;
+            border-radius: 14px;
+            text-align: center;
+            font-size: 1.22em;
+            color: #0a1647;
+            box-shadow: 0 0 18px #0003;
+        }
+        @media (max-width: 600px) {
+            .navbar { flex-direction: column; gap: 0.5em; padding: 1em; }
+            .wrapper { min-width: 100vw; max-width: 98vw; margin: 0.5em; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR  -->
+    <nav class="navbar">
+        <div class="logo">Bienvenue a BOBO DiOULASSO</div>
+        <ul>
+            <li><a href="ACCUEIL.html">Accueil</a></li>
+            <li><a href="Reservation.html">Réservation</a></li>
+            <li><a href="patrimoine.html">Patrimoine</a></li>
+            <li><a href="Galerie.html">Galerie</a></li>
+        </ul>
+    </nav>
+
+    <div class="hotel">
+        <img src="sissiman.jpeg" alt="Hôtel Sissiman">
+        <p>Hôtel Sissiman</p>
+    </div>
+    <div class="hotel">
+        <img src="l'auberge.jpeg" alt="Hôtel l'Auberge">
+        <p>Hôtel l'Auberge</p>
+    </div>
+    <div class="hotel">
+        <img src="iba.jpeg" alt="Iba Hôtel">
+        <p>Iba Hôtel</p>
+    </div>
+    <div class="hotel">
+        <img src="dioulassoba.jpeg" alt="Hôtel Dioulassoba">
+        <p>Hôtel Dioulassoba</p>
+    </div>
+	<div class="hotel">
+        <img src="villa_rose.jpg" alt="Villa Rose">
+        <p>Villa Rose</p>
+    </div>
+
+    <form id="reservationForm">
+        <label for="hotel">Choisissez un hôtel :</label>
+        <select id="hotel">
+            <option value="Hôtel Sissiman">Hôtel Sissiman</option>
+            <option value="Hôtel L'Auberge">Hôtel L'Auberge</option>
+            <option value="Iba Hôtel">Iba Hôtel</option>
+            <option value="Hôtel Dioulassoba">Hôtel Dioulassoba</option>
+			<option value="Villa Rose">Villa Rose</option>
+        </select><br><br>	
+    <div class="container"> 
+        <div class="wrapper">
+            <h2>Réservez votre hotel</h2>
+            <form id="reservationForm" action="reservation.php" method="post" autocomplete="on">
+                <div class="input_box">
+                    <input type="text" id="fName" name="fName" placeholder="Nom" required>
+                </div>
+                <div class="input_box">
+                    <input type="text" id="lName" name="lName" placeholder="Prénom" required>
+                </div>
+                <div class="input_box">
+                    <input type="number" id="Cartes" name="Cartes" placeholder="Entrez votre argent en espèce" min="0" required>
+                </div>
+                <div class="input_box">
+                    <input type="tel" pattern="\d{8}" placeholder="Entrez votre numéro"> 
+                </div>
+                <div class="input_box">
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="input_box">
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="input_box">
+                    <select name="people" required>
+                        <option value="">Nombre de personnes</option>
+                        <option value="1">1 personne</option>
+                        <option value="2">2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="5">5 personnes ou plus</option>
+                    </select>
+                </div>
+                <div class="input_box">
+                    <label>Services supplémentaires :</label><br>
+                    <input type="checkbox" name="services[]" value="terrasse"> Terrasse
+                    <input type="checkbox" name="services[]" value="privé"> Espace privé
+                    <input type="checkbox" name="services[]" value="menu_végétarien"> Menu végétarien
+                </div>
+                <button type="submit" id="submit">Réserver</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmation">
+        <div class="message">
+            Votre demande de réservation est en cours de traitement.<br>
+            Merci pour votre confiance !
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('reservationForm');
+        const confirmation = document.getElementById('confirmation');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            confirmation.style.display = 'flex';
+            setTimeout(() => {
+                confirmation.style.display = 'none';
+                form.reset();
+            }, 3000); // Disparait après 3 secondes
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* Import fonts */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #f8fafc 0%, #f5e9d7 100%);
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #0e4d64 60%, #35a7ff 100%);
+    color: #fff;
+    padding: 0 0 10px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px 0 0 0;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    transition: transform 0.3s;
+}
+.logo:hover {
+    transform: scale(1.07) rotate(-3deg);
+}
+
+header h1 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: #ffd700;
+    text-shadow: 1px 1px 10px #0e4d64;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 18px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.15rem;
+    padding: 8px 18px;
+    border-radius: 22px;
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+    position: relative;
+}
+nav a.active, nav a:hover {
+    background: #ffd700;
+    color: #0e4d64;
+    box-shadow: 0 2px 10px rgba(53,167,255,0.13);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 18px 0 18px;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(14,77,100,0.10);
+    padding: 38px 30px;
+    margin: 34px 0;
+    animation: fadeInUp 1.2s cubic-bezier(.32,1.56,.64,1) 0.1s both;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text {
+    flex: 1 1 340px;
+    min-width: 320px;
+}
+
+.hero-text h2 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #0e4d64;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px #e6f2fb;
+}
+
+.hero-text p {
+    margin-bottom: 18px;
+    font-size: 1.13rem;
+    line-height: 1.7;
+}
+
+.features {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 22px;
+}
+.features li {
+    background: #e1f7fa;
+    color: #0e4d64;
+    margin: 6px 0;
+    padding: 9px 18px;
+    border-radius: 11px;
+    font-size: 1.05rem;
+    box-shadow: 0 1px 7px rgba(53,167,255,0.09);
+    transition: background 0.2s;
+}
+.features li:hover {
+    background: #ffd700;
+    color: #0e4d64;
+}
+
+.cta {
+    display: inline-block;
+    background: linear-gradient(90deg, #35a7ff 30%, #ffd700 100%);
+    color: #0e4d64;
+    font-weight: bold;
+    font-size: 1.11rem;
+    padding: 12px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 8px;
+    box-shadow: 0 2px 12px rgba(53,167,255,0.10);
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+}
+.cta:hover {
+    background: linear-gradient(90deg, #ffd700 30%, #35a7ff 100%);
+    color: #0e4d64;
+    box-shadow: 0 6px 24px rgba(53,167,255,0.18);
+    transform: scale(1.04);
+}
+
+.hero-image {
+    flex: 1 1 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+}
+.hero-image img {
+    width: 350px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(14,77,100,0.16);
+    transition: transform 0.4s;
+}
+.hero-image img:hover {
+    transform: scale(1.04) rotate(-2deg);
+}
+
+footer {
+    background: #0e4d64;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0 9px 0;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    margin-top: 42px;
+    box-shadow: 0 -4px 20px rgba(14,77,100,0.10);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        padding: 32px 13px;
+    }
+    .hero-image img {
+        width: 100%;
+        max-width: 350px;
+    }
+    main {
+        padding: 18px 6px 0 6px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+}
